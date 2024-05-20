@@ -20,21 +20,27 @@ public class TaxApplication {
 			switch (userChoice) {
 				case 1 -> {
 					// Set the taxChoice string as the Income tax bean id.
+					taxChoice = "incomeTax";
 				}
 				case 2 -> {
 					// Set the taxChoice string as the Property tax bean id.
+					taxChoice = "propertyTax";
 				}
 				case 3 -> {
 					// Print the message "Exiting..." and return.
+					System.out.println("Exiting...");
+					return;
 				}
 				default -> {
+					System.out.println("Invalid choice");
+					return;
 					// Print the message "Invalid choice" and return.
 				}
 			}
 			// Pick the tax bean using context.getBean() method using taxChoice string.
-			Tax tax = ;
+			Tax tax = (Tax) context.getBean(taxChoice);
+			
 			System.out.println(tax.getTaxType());
 		}
 	}
-
 }
