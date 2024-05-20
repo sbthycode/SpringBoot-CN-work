@@ -1,0 +1,25 @@
+package com.example.tax;
+
+import java.util.Scanner;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TaxApplication {
+
+	public static void main(String[] args) {
+		// Take ClassPathXmlApplicationContext from applicationContext.xml file
+		System.out.println("Enter the tax regime:");
+		Scanner scanner = new Scanner(System.in);
+		String regime = scanner.nextLine();
+		if(regime.equals("Income")) {
+			System.out.println("incometax");
+		}
+		else {
+			System.out.println("propertytax");
+		}
+		
+
+	}
+
+}

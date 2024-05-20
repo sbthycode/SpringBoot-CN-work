@@ -1,0 +1,19 @@
+package com.shruhridBanthia.testingSpringdemo;
+
+public class ShortTable implements Table {
+	
+	double height;
+	double length;
+	
+	public ShortTable() {
+		this.height = 15.5;
+		this.length = 25.5;
+	}
+
+	@Override
+	public String showDetails() {
+		// TODO Auto-generated method stub
+		return "the table has heigth "+this.height+"and lengh"+this.length;
+	}
+
+}

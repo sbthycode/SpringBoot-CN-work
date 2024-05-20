@@ -1,0 +1,18 @@
+package com.shruhridBanthia.testingSpringdemo;
+
+public class LongTable implements Table {
+
+	double length;
+	double height;
+	
+	public LongTable() {
+		this.height = 15.5;
+		this.length = 25.5;
+	}
+	@Override
+	public String showDetails() {
+		// TODO Auto-generated method stub
+		return "the table has heigth "+this.height+"and lengh"+this.length;
+	}
+
+}

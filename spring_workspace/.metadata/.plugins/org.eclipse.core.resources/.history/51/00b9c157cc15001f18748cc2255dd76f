@@ -1,0 +1,5 @@
+package com.shruhridBanthia.testingSpringdemo;
+
+public interface Table {
+
+}
