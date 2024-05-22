@@ -12,6 +12,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Semester8\Spring_Boot_CN\spring_workspace\Template Cinemaxify II"/>
+			<item value="D:\Semester8\Spring_Boot_CN\spring_workspace\Tax Template II"/>
 			<item value="D:\Semester8\Spring_Boot_CN\spring_workspace\TemplateTaxI"/>
 		</list>
 	</section>
