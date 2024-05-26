@@ -1,16 +1,25 @@
 package com.codingNinjas.codingNinjasApp;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 public class PaidCourse implements Course{
 	
 	String courseName;
 	Instructor courseInstructor;
+	@Autowired
+	@Qualifier("javaInstructor")
+	Instructor javaInstructor;
+	@Autowired
+	@Qualifier("springInstructor")
+	Instructor springInstructor;
+	@Autowired
 	UserList userList;
 
-	
-	public PaidCourse(Instructor instructor,UserList userList) {
-		this.courseInstructor = instructor;
-		this.userList = userList;
-	}
 	
 	@Override
 	public void setCourseDetails(String courseName) {
@@ -30,6 +39,15 @@ public class PaidCourse implements Course{
 	@Override
 	public String getCourseName() {
 		return this.courseName;
+	}
+	
+	public void setInstructor(String instructorType) {
+		if (instructorType == "spring") {
+			this.courseInstructor = this.springInstructor;
+		}
+		else {
+			this.courseInstructor = this.javaInstructor;
+		}
 	}
 	
 }

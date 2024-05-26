@@ -1,5 +1,11 @@
 package com.codingNinjas.codingNinjasApp;
 
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
+@Component("javaInstructor")
 public class JavaInstructor implements Instructor {
 
 	String name;
@@ -17,10 +23,12 @@ public class JavaInstructor implements Instructor {
 				+ "instructor";
 	}
 	
+	@PostConstruct
 	public void init() {
 		System.out.println("Java instructor bean created");
 	}
 	
+	@PreDestroy
 	public void cleanup() {
 		System.out.println("Java instructor bean about to be destroyed");
 	}

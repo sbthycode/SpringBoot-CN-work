@@ -3,6 +3,7 @@ package com.codingNinjas.codingNinjasApp;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 //@SpringBootApplication
@@ -11,18 +12,20 @@ public class CodingNinjasAppApplication {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the coding ninjas application");
 		// Getting context from XML
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.codingNinjas.codingNinjasApp");
 
 		// configure the course and create a list of courses offered. 
 		ArrayList<PaidCourse> paidCourses = new ArrayList<PaidCourse>();
-		PaidCourse javaCourse = (PaidCourse) context.getBean("javaCourse");
-		PaidCourse springCourse = (PaidCourse) context.getBean("springCourse");
+		PaidCourse javaCourse = context.getBean(PaidCourse.class);
+		PaidCourse springCourse = context.getBean(PaidCourse.class);
 
 		// set java course instructor details and course name.
+		javaCourse.setInstructor("java");
 		javaCourse.courseInstructor.setInstructorDetails("Rohan Singh", "26");
 		javaCourse.setCourseDetails("Basics of Java");
 
 		// set Spring course instructor details and course name.
+		springCourse.setInstructor("spring");
 		springCourse.courseInstructor.setInstructorDetails("Rahul Mohan", "27");
 		springCourse.setCourseDetails("Spring and Spring boot");
 		
@@ -47,7 +50,7 @@ public class CodingNinjasAppApplication {
 			switch (option) {
 			case 1: {
 				// get the user (prototype bean) and set the details.
-				User user = (User) context.getBean("simpleUser");
+				User user = context.getBean(User.class);
 				System.out.println("Please enter your name");
 				String name = scanner.nextLine();
 				System.out.println("Please enter your age");
