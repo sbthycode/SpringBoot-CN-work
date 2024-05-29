@@ -1,20 +1,19 @@
 package com.codingNinjas.codingNinjasApp;
 
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class CodingNinjasAppApplication {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the coding ninjas application");
-		// Getting context from XML
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.codingNinjas.codingNinjasApp");
-
-		// configure the course and create a list of courses offered. 
+		ApplicationContext	context = SpringApplication.run(CodingNinjasAppApplication.class);	// configure the course and create a list of courses offered. 
 		ArrayList<PaidCourse> paidCourses = new ArrayList<PaidCourse>();
 		PaidCourse javaCourse = context.getBean(PaidCourse.class);
 		PaidCourse springCourse = context.getBean(PaidCourse.class);
@@ -112,7 +111,6 @@ public class CodingNinjasAppApplication {
 
 		System.out.println("program stopped");
 		scanner.close();
-		context.close();
 
 	}
 
