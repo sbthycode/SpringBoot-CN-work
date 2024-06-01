@@ -1,0 +1,19 @@
+package com.example.website.service;
+
+import com.example.website.domain.User;
+
+public class StudentUserService implements UserService, UserService {
+
+	@Override
+	public User getUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean signUp(String name, String gender, String location, String college) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

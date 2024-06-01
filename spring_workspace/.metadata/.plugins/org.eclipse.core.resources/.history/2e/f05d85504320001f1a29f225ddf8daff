@@ -1,0 +1,22 @@
+package com.example.website.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.website.domain.User;
+
+@Service
+public class StudentUserService implements UserService{
+
+	@Override
+	public User getUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean signUp(String name, String gender, String location, String college) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

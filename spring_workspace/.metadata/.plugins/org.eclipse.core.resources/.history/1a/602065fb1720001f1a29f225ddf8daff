@@ -1,0 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/forms" %>
+<html>
+ <h1>Hi from Signup page!</h1>
+</html>
