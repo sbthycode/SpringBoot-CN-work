@@ -1,5 +1,0 @@
-package com.codingNinjas.codingNinjasApp;
-
-public @interface Component {
-
-}
