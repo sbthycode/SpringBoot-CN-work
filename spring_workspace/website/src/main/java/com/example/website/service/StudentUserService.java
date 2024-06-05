@@ -17,10 +17,13 @@ public class StudentUserService implements UserService{
 	}
 
 	@Override
-	public boolean signUp(String name, String gender, String location, String college) {
+	public int signUp(String name, String gender, String location, String college) {
 		boolean isStudentCreated = studentUser.createUser(name, gender, location, college);
-		studentUser.saveUser();
-		return isStudentCreated;
+		if(isStudentCreated) {
+		int userid = studentUser.saveUser();
+		return userid;
+		}
+		else return -1;
 	}
 
 }
