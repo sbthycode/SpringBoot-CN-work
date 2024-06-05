@@ -1,0 +1,11 @@
+package com.example.website.service;
+
+public class UserMessageService implements MessageService {
+
+	@Override
+	public String createMessage(int userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.example.website.domain;
+
+public class SupportUserMessage implements UserMessage {
+
+	@Override
+	public void setUserId() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
